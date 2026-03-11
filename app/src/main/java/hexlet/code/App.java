@@ -4,8 +4,6 @@ import java.util.Scanner;
 
 public class App {
 
-    private static String playerName = "";
-
     public static void main(String[] args) {
         System.out.println("Welcome to the Brain Games!");
         Scanner scanner = new Scanner(System.in);
@@ -15,6 +13,7 @@ public class App {
             System.out.println("Please enter the game number and press Enter.");
             System.out.println("1 - Greet");
             System.out.println("2 - Even");
+            System.out.println("3 - Calc");
             System.out.println("0 - Exit");
             System.out.print("Your choice: ");
 
@@ -28,15 +27,13 @@ public class App {
 
             switch (choice) {
                 case 1:
-                    playerName = Cli.greeting(scanner);
+                    Cli.greeting(scanner);
                     break;
                 case 2:
-                    if (playerName.isEmpty()) {
-                        playerName = Cli.greeting(scanner);
-                    } else {
-                        System.out.println("Hello, " + playerName + "!");
-                    }
-                    Even.run(scanner, playerName);
+                    Engine.run(new Even(), scanner);
+                    break;
+                case 3:
+                    Engine.run(new Calculator(), scanner);
                     break;
                 case 0:
                 default:
