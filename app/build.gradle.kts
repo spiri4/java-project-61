@@ -1,5 +1,6 @@
 plugins {
     application
+    id("org.sonarqube") version "7.2.3.7755"
 }
 
 group = "hexlet.code"
@@ -25,4 +26,11 @@ tasks.test {
 
 tasks.getByName("run", JavaExec::class) {
     standardInput = System.`in`
+}
+
+sonar {
+    properties {
+        property("sonar.projectKey", "spiri4_java-project-61")
+        property("sonar.organization", "spiri4")
+    }
 }
