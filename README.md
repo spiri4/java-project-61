@@ -1,3 +1,7 @@
+
+
+https://asciinema.org/connect/4d6b4220-affd-4b14-8303-cb70e88b914a
+
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/spiri4/java-project-61/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/spiri4/java-project-61/actions)
 [![Bugs](https://sonarcloud.io/api/project_badges/measure?project=spiri4_java-project-61&metric=bugs)](https://sonarcloud.io/summary/new_code?id=spiri4_java-project-61)
