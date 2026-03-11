@@ -37,6 +37,12 @@
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="app" type="f1a62948:ProjectNode" />
                 <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="build" type="c8890929:TasksNode$1" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="app" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
                 <item name="build setup" type="c8890929:TasksNode$1" />
               </path>
               <path>
@@ -71,6 +77,8 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Gradle.app [:hexlet.code.App.main()].executor": "Run",
+    "Gradle.app [build].executor": "Run",
+    "Gradle.app [clean].executor": "Run",
     "Gradle.app [installDist].executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -192,7 +200,7 @@
       <option name="presentableId" value="Default" />
       <updated>1773218419346</updated>
       <workItem from="1773218420725" duration="264000" />
-      <workItem from="1773218812442" duration="444000" />
+      <workItem from="1773218812442" duration="1203000" />
     </task>
     <servers />
   </component>
