@@ -1,22 +1,16 @@
-package hexlet.code;
+package hexlet.code.games;
 
 import java.util.Random;
 
-public class Prime implements Game {
+public class Prime {
 
     private static final int MAX_NUMBER = 20;
-    private final Random random = new Random();
+    private static final String DESCRIPTION = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
 
-    @Override
-    public String getDescription() {
-        return "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
-    }
-
-    @Override
-    public Round generateRound() {
+    public static String[] generateRound(Random random) {
         int number = random.nextInt(MAX_NUMBER) + 1;
         String correctAnswer = isPrime(number) ? "yes" : "no";
-        return new Round(String.valueOf(number), correctAnswer);
+        return new String[] {DESCRIPTION, String.valueOf(number), correctAnswer};
     }
 
     private static boolean isPrime(int number) {

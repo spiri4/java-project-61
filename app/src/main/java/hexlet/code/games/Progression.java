@@ -1,8 +1,8 @@
-package hexlet.code;
+package hexlet.code.games;
 
 import java.util.Random;
 
-public class Progression implements Game {
+public class Progression {
 
     // Минимальная длина прогрессии (сколько чисел показываем в Question).
     private static final int MIN_LENGTH = 5;
@@ -12,16 +12,9 @@ public class Progression implements Game {
     private static final int RANGE = 50;
     // Максимальный шаг прогрессии (step генерируется в диапазоне [1..MAX_STEP]).
     private static final int MAX_STEP = 9;
+    private static final String DESCRIPTION = "What number is missing in the progression?";
 
-    private final Random random = new Random();
-
-    @Override
-    public String getDescription() {
-        return "What number is missing in the progression?";
-    }
-
-    @Override
-    public Round generateRound() {
+    public static String[] generateRound(Random random) {
         int length = random.nextInt(MAX_LENGTH - MIN_LENGTH + 1) + MIN_LENGTH;
         int start = random.nextInt(RANGE) + 1;
         int step = random.nextInt(MAX_STEP) + 1;
@@ -30,9 +23,9 @@ public class Progression implements Game {
 
         int[] progression = buildProgression(start, step, length);
         String correctAnswer = String.valueOf(progression[hiddenIndex]);
-
         String question = formatQuestion(progression, hiddenIndex);
-        return new Round(question, correctAnswer);
+
+        return new String[] {DESCRIPTION, question, correctAnswer};
     }
 
     private static int[] buildProgression(int start, int step, int length) {

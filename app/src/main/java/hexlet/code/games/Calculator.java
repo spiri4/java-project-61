@@ -1,27 +1,21 @@
-package hexlet.code;
+package hexlet.code.games;
 
 import java.util.Random;
 
-public class Calculator implements Game {
+public class Calculator {
 
     private static final int MAX_NUMBER = 100;
     private static final char[] OPERATIONS = {'+', '-', '*'};
-    private final Random random = new Random();
+    private static final String DESCRIPTION = "What is the result of the expression?";
 
-    @Override
-    public String getDescription() {
-        return "What is the result of the expression?";
-    }
-
-    @Override
-    public Round generateRound() {
+    public static String[] generateRound(Random random) {
         int first = random.nextInt(MAX_NUMBER) + 1;
         int second = random.nextInt(MAX_NUMBER) + 1;
         char operation = OPERATIONS[random.nextInt(OPERATIONS.length)];
 
         int correctAnswer = calculate(first, second, operation);
         String question = first + " " + operation + " " + second;
-        return new Round(question, String.valueOf(correctAnswer));
+        return new String[] {DESCRIPTION, question, String.valueOf(correctAnswer)};
     }
 
     private static int calculate(int first, int second, char operation) {

@@ -1,24 +1,18 @@
-package hexlet.code;
+package hexlet.code.games;
 
 import java.util.Random;
 
-public class Gcd implements Game {
+public class Gcd {
 
     private static final int MAX_NUMBER = 100;
-    private final Random random = new Random();
+    private static final String DESCRIPTION = "Find the greatest common divisor of given numbers.";
 
-    @Override
-    public String getDescription() {
-        return "Find the greatest common divisor of given numbers.";
-    }
-
-    @Override
-    public Round generateRound() {
+    public static String[] generateRound(Random random) {
         int first = random.nextInt(MAX_NUMBER) + 1;
         int second = random.nextInt(MAX_NUMBER) + 1;
         int gcd = gcd(first, second);
         String question = first + " " + second;
-        return new Round(question, String.valueOf(gcd));
+        return new String[] {DESCRIPTION, question, String.valueOf(gcd)};
     }
 
     private static int gcd(int a, int b) {
