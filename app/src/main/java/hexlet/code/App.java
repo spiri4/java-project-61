@@ -15,6 +15,7 @@ public class App {
             System.out.println("2 - Even");
             System.out.println("3 - Calc");
             System.out.println("4 - GCD");
+            System.out.println("5 - Progression");
             System.out.println("0 - Exit");
             System.out.print("Your choice: ");
 
@@ -39,11 +40,14 @@ public class App {
                 case 4:
                     Engine.run(new Gcd(), scanner);
                     break;
+                case 5:
+                    Engine.run(new Progression(), scanner);
+                    break;
                 case 0:
                 default:
                     break;
             }
-        } while (choice != 0);//пока пользователь не нажмёт 0-Exit возвращаемся в главное меню
+        } while (choice != 0); //пока пользователь не нажмёт 0-Exit возвращаемся в главное меню
 
         scanner.close();
     }
