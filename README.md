@@ -4,6 +4,7 @@ https://asciinema.org/connect/4d6b4220-affd-4b14-8303-cb70e88b914a -Even
 https://asciinema.org/a/ds7nbMXGjlYDxVey - Calculator
 https://asciinema.org/a/dXOqrHlnOjQVIfCW - GCD
 https://asciinema.org/a/ZfTll5UztKeqNH9Z - Progression
+https://asciinema.org/a/uux0ev6z1mnn5VCg - Prime
 
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/spiri4/java-project-61/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/spiri4/java-project-61/actions)

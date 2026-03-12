@@ -16,6 +16,7 @@ public class App {
             System.out.println("3 - Calc");
             System.out.println("4 - GCD");
             System.out.println("5 - Progression");
+            System.out.println("6 - Prime");
             System.out.println("0 - Exit");
             System.out.print("Your choice: ");
 
@@ -42,6 +43,9 @@ public class App {
                     break;
                 case 5:
                     Engine.run(new Progression(), scanner);
+                    break;
+                case 6:
+                    Engine.run(new Prime(), scanner);
                     break;
                 case 0:
                 default:
