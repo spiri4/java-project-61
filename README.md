@@ -5,6 +5,8 @@ https://asciinema.org/a/ds7nbMXGjlYDxVey - Calculator
 https://asciinema.org/a/dXOqrHlnOjQVIfCW - GCD
 https://asciinema.org/a/ZfTll5UztKeqNH9Z - Progression
 https://asciinema.org/a/uux0ev6z1mnn5VCg - Prime
+=====LATEST ВЕРСИЯ, ВСЕ ИГРЫ==============
+https://asciinema.org/a/GOvyfPr4xGxfD47k
 
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/spiri4/java-project-61/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/spiri4/java-project-61/actions)
