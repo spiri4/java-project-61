@@ -2,7 +2,7 @@ package hexlet.code.games;
 
 import hexlet.code.Engine;
 
-import java.util.Random;
+import java.security.SecureRandom;
 import java.util.Scanner;
 
 public class Progression {
@@ -17,7 +17,7 @@ public class Progression {
     // Максимальный шаг прогрессии (step генерируется в диапазоне [1..MAX_STEP]).
     private static final int MAX_STEP = 9;
     private static final String MAIN_QUESTION = "What number is missing in the progression?";
-    private static final Random RANDOM = new Random();
+    private static final SecureRandom RANDOM = new SecureRandom();
 
     public static void start(Scanner scanner) {
         String[][] rounds = new String[ROUNDS][2];

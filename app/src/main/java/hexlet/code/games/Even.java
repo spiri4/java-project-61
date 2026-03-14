@@ -2,7 +2,7 @@ package hexlet.code.games;
 
 import hexlet.code.Engine;
 
-import java.util.Random;
+import java.security.SecureRandom;
 import java.util.Scanner;
 
 public class Even {
@@ -11,7 +11,7 @@ public class Even {
     private static final int MAX_NUMBER = 100;
     private static final String MAIN_QUESTION =
             "Answer 'yes' if the number is even, otherwise answer 'no'.";
-    private static final Random RANDOM = new Random();
+    private static final SecureRandom RANDOM = new SecureRandom();
 
     public static void start(Scanner scanner) {
         String[][] rounds = new String[ROUNDS][2];
