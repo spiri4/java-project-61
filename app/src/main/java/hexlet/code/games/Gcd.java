@@ -10,14 +10,14 @@ public class Gcd {
     private static final int ROUNDS = 3;
     private static final int MAX_NUMBER = 100;
     private static final String MAIN_QUESTION = "Find the greatest common divisor of given numbers.";
+    private static final Random RANDOM = new Random();
 
     public static void start(Scanner scanner) {
         String[][] rounds = new String[ROUNDS][2];
-        Random random = new Random();
 
         for (int i = 0; i < ROUNDS; i++) {
-            int first = random.nextInt(MAX_NUMBER) + 1;
-            int second = random.nextInt(MAX_NUMBER) + 1;
+            int first = RANDOM.nextInt(MAX_NUMBER) + 1;
+            int second = RANDOM.nextInt(MAX_NUMBER) + 1;
             int gcd = gcd(first, second);
             String question = first + " " + second;
 

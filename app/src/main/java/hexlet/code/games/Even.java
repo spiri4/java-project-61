@@ -11,13 +11,13 @@ public class Even {
     private static final int MAX_NUMBER = 100;
     private static final String MAIN_QUESTION =
             "Answer 'yes' if the number is even, otherwise answer 'no'.";
+    private static final Random RANDOM = new Random();
 
     public static void start(Scanner scanner) {
         String[][] rounds = new String[ROUNDS][2];
-        Random random = new Random();
 
         for (int i = 0; i < ROUNDS; i++) {
-            int number = random.nextInt(MAX_NUMBER) + 1;
+            int number = RANDOM.nextInt(MAX_NUMBER) + 1;
             String question = String.valueOf(number);
             String correctAnswer = number % 2 == 0 ? "yes" : "no";
 

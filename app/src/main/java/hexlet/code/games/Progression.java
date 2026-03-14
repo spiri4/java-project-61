@@ -17,17 +17,17 @@ public class Progression {
     // Максимальный шаг прогрессии (step генерируется в диапазоне [1..MAX_STEP]).
     private static final int MAX_STEP = 9;
     private static final String MAIN_QUESTION = "What number is missing in the progression?";
+    private static final Random RANDOM = new Random();
 
     public static void start(Scanner scanner) {
         String[][] rounds = new String[ROUNDS][2];
-        Random random = new Random();
 
         for (int roundIndex = 0; roundIndex < ROUNDS; roundIndex++) {
-            int length = random.nextInt(MAX_LENGTH - MIN_LENGTH + 1) + MIN_LENGTH;
-            int start = random.nextInt(RANGE) + 1;
-            int step = random.nextInt(MAX_STEP) + 1;
+            int length = RANDOM.nextInt(MAX_LENGTH - MIN_LENGTH + 1) + MIN_LENGTH;
+            int start = RANDOM.nextInt(RANGE) + 1;
+            int step = RANDOM.nextInt(MAX_STEP) + 1;
 
-            int hiddenIndex = random.nextInt(length - 2) + 1; // [1 .. length-2]
+            int hiddenIndex = RANDOM.nextInt(length - 2) + 1; // [1 .. length-2]
 
             String[] progression = buildProgression(start, step, length);
             String correctAnswer = progression[hiddenIndex];

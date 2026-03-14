@@ -11,15 +11,15 @@ public class Calculator {
     private static final int MAX_NUMBER = 100;
     private static final char[] OPERATIONS = {'+', '-', '*'};
     private static final String MAIN_QUESTION = "What is the result of the expression?";
+    private static final Random RANDOM = new Random();
 
     public static void start(Scanner scanner) {
         String[][] rounds = new String[ROUNDS][2];
-        Random random = new Random();
 
         for (int i = 0; i < ROUNDS; i++) {
-            int first = random.nextInt(MAX_NUMBER) + 1;
-            int second = random.nextInt(MAX_NUMBER) + 1;
-            char operation = OPERATIONS[random.nextInt(OPERATIONS.length)];
+            int first = RANDOM.nextInt(MAX_NUMBER) + 1;
+            int second = RANDOM.nextInt(MAX_NUMBER) + 1;
+            char operation = OPERATIONS[RANDOM.nextInt(OPERATIONS.length)];
 
             int correctAnswer = calculate(first, second, operation);
             String question = first + " " + operation + " " + second;

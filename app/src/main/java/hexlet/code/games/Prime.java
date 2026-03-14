@@ -11,13 +11,13 @@ public class Prime {
     private static final int MAX_NUMBER = 20;
     private static final String MAIN_QUESTION =
             "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
+    private static final Random RANDOM = new Random();
 
     public static void start(Scanner scanner) {
         String[][] rounds = new String[ROUNDS][2];
-        Random random = new Random();
 
         for (int i = 0; i < ROUNDS; i++) {
-            int number = random.nextInt(MAX_NUMBER) + 1;
+            int number = RANDOM.nextInt(MAX_NUMBER) + 1;
             String correctAnswer = isPrime(number) ? "yes" : "no";
             String question = String.valueOf(number);
 
