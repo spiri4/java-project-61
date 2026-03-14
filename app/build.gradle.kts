@@ -15,6 +15,12 @@ application {
     mainClass.set("hexlet.code.App")
 }
 
+tasks.jar {
+    manifest {
+        attributes["Main-Class"] = "hexlet.code.App"
+    }
+}
+
 tasks.getByName("run", JavaExec::class) {
     standardInput = System.`in`
 }

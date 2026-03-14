@@ -1,9 +1,13 @@
 package hexlet.code.games;
 
+import hexlet.code.Engine;
+
 import java.util.Random;
+import java.util.Scanner;
 
 public class Progression {
 
+    private static final int ROUNDS = 3;
     // Минимальная длина прогрессии (сколько чисел показываем в Question).
     private static final int MIN_LENGTH = 5;
     // Максимальная длина прогрессии.
@@ -12,42 +16,37 @@ public class Progression {
     private static final int RANGE = 50;
     // Максимальный шаг прогрессии (step генерируется в диапазоне [1..MAX_STEP]).
     private static final int MAX_STEP = 9;
-    private static final String DESCRIPTION = "What number is missing in the progression?";
+    private static final String MAIN_QUESTION = "What number is missing in the progression?";
 
-    public static String[] generateRound(Random random) {
-        int length = random.nextInt(MAX_LENGTH - MIN_LENGTH + 1) + MIN_LENGTH;
-        int start = random.nextInt(RANGE) + 1;
-        int step = random.nextInt(MAX_STEP) + 1;
+    public static void start(Scanner scanner) {
+        String[][] rounds = new String[ROUNDS][2];
+        Random random = new Random();
 
-        int hiddenIndex = random.nextInt(length - 2) + 1; // [1 .. length-2]
+        for (int roundIndex = 0; roundIndex < ROUNDS; roundIndex++) {
+            int length = random.nextInt(MAX_LENGTH - MIN_LENGTH + 1) + MIN_LENGTH;
+            int start = random.nextInt(RANGE) + 1;
+            int step = random.nextInt(MAX_STEP) + 1;
 
-        int[] progression = buildProgression(start, step, length);
-        String correctAnswer = String.valueOf(progression[hiddenIndex]);
-        String question = formatQuestion(progression, hiddenIndex);
+            int hiddenIndex = random.nextInt(length - 2) + 1; // [1 .. length-2]
 
-        return new String[] {DESCRIPTION, question, correctAnswer};
+            String[] progression = buildProgression(start, step, length);
+            String correctAnswer = progression[hiddenIndex];
+            progression[hiddenIndex] = "..";
+            String question = String.join(" ", progression);
+
+            rounds[roundIndex][0] = question;
+            rounds[roundIndex][1] = correctAnswer;
+        }
+
+        Engine.play(MAIN_QUESTION, rounds, scanner);
     }
 
-    private static int[] buildProgression(int start, int step, int length) {
-        int[] result = new int[length];
+    private static String[] buildProgression(int start, int step, int length) {
+        String[] result = new String[length];
         for (int i = 0; i < length; i++) {
-            result[i] = start + i * step;
+            int currentElement = start + i * step;
+            result[i] = String.valueOf(currentElement);
         }
         return result;
-    }
-
-    private static String formatQuestion(int[] progression, int hiddenIndex) {
-        StringBuilder sb = new StringBuilder();
-        for (int i = 0; i < progression.length; i++) {
-            if (i > 0) {
-                sb.append(' ');
-            }
-            if (i == hiddenIndex) {
-                sb.append("..");
-            } else {
-                sb.append(progression[i]);
-            }
-        }
-        return sb.toString();
     }
 }

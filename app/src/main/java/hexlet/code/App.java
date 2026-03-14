@@ -1,6 +1,6 @@
 package hexlet.code;
 
-import hexlet.code.games.Calculator; // линтер не разрешает сделать hexlet.code.games.* :)
+import hexlet.code.games.Calculator;
 import hexlet.code.games.Even;
 import hexlet.code.games.Gcd;
 import hexlet.code.games.Prime;
@@ -47,19 +47,19 @@ public class App {
                 Cli.greeting(scanner);
                 break;
             case EVEN:
-                Engine.run(scanner, Even.class);
+                Even.start(scanner);
                 break;
             case CALC:
-                Engine.run(scanner, Calculator.class);
+                Calculator.start(scanner);
                 break;
             case GCD:
-                Engine.run(scanner, Gcd.class);
+                Gcd.start(scanner);
                 break;
             case PROGRESSION:
-                Engine.run(scanner, Progression.class);
+                Progression.start(scanner);
                 break;
             case PRIME:
-                Engine.run(scanner, Prime.class);
+                Prime.start(scanner);
                 break;
             case EXIT:
             default:
@@ -69,5 +69,6 @@ public class App {
         scanner.close();
     }
 }
+
 
 

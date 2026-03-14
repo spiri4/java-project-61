@@ -1,16 +1,31 @@
 package hexlet.code.games;
 
+import hexlet.code.Engine;
+
 import java.util.Random;
+import java.util.Scanner;
 
 public class Even {
 
+    private static final int ROUNDS = 3;
     private static final int MAX_NUMBER = 100;
-    private static final String DESCRIPTION = "Answer 'yes' if the number is even, otherwise answer 'no'.";
+    private static final String MAIN_QUESTION =
+            "Answer 'yes' if the number is even, otherwise answer 'no'.";
 
-    public static String[] generateRound(Random random) {
-        int number = random.nextInt(MAX_NUMBER) + 1;
-        String correctAnswer = number % 2 == 0 ? "yes" : "no";
-        return new String[] {DESCRIPTION, String.valueOf(number), correctAnswer};
+    public static void start(Scanner scanner) {
+        String[][] rounds = new String[ROUNDS][2];
+        Random random = new Random();
+
+        for (int i = 0; i < ROUNDS; i++) {
+            int number = random.nextInt(MAX_NUMBER) + 1;
+            String question = String.valueOf(number);
+            String correctAnswer = number % 2 == 0 ? "yes" : "no";
+
+            rounds[i][0] = question;
+            rounds[i][1] = correctAnswer;
+        }
+
+        Engine.play(MAIN_QUESTION, rounds, scanner);
     }
 }
 
