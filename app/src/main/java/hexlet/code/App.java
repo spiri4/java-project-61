@@ -34,15 +34,15 @@ public class App {
         System.out.println(EXIT + " - Exit");
         System.out.print("Your choice: ");
 
-        int choice = INVALID_CHOICE;
+        int userChoice = INVALID_CHOICE;
         if (scanner.hasNextInt()) {
-            choice = scanner.nextInt();
+            userChoice = scanner.nextInt();
         } else {
             scanner.next(); // consume invalid input
         }
         scanner.nextLine(); // consume newline after number
 
-        switch (choice) {
+        switch (userChoice) {
             case GREET:
                 Cli.greeting(scanner);
                 break;
@@ -62,7 +62,9 @@ public class App {
                 Prime.start(scanner);
                 break;
             case EXIT:
+                break;
             default:
+                System.out.println("Unknown user choice: " + userChoice);
                 break;
         }
 
